@@ -20,7 +20,8 @@ class MazeSolver:
         
     def load_maze(self, filename):
         with open(filename, 'r') as file:
-            return [list(line.strip()) for line in file if line.strip()]
+            return [list(line.strip().replace(',', '')) for line in file if line.strip()]
+
 
     def find_positions(self, char):
         positions = []
